@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Butterfly Recognition App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .carousel-item {
+        min-height: 100vh;
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .carousel-caption {
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 1px 1px 3px #000;
+    }
+
+    .carousel-caption p {
+        color: #fff;
+        font-size: 1rem;
+        text-shadow: 1px 1px 2px #000;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        background-color: white !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+      .navbar-nav .nav-link {
+        color: black !important;
+        font-weight: 500;
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+        color: black !important;
+    }
+
+  
+
+    .btn-outline-dark:active {
+    background-color: transparent !important;
+    color: green !important;
+    border-color: black !important;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav text-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-dark ms-2" href="{{ url_for('input_page') }}">Get Started</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Carousel Start -->
+<div id="butterflyCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/butterfly1.jpg') }}" alt="Butterfly 1">
+            <div class="carousel-caption">
+                <h5>Just when the caterpillar thought the world</h5>
+                <h5>was over, it became a butterfly.</h5>
+                <p>They can't see how truly beautiful they are, but everyone else can.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='images/butterfly2.jpg') }}" alt="Butterfly 2">
+            <div class="carousel-caption">
+                <h5>Love is like a butterfly. It goes where it</h5>
+                <h5>pleases and it pleases wherever it goes.</h5>
+                <p>People are like that as well.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Carousel controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#butterflyCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#butterflyCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+<!-- Carousel End -->
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
